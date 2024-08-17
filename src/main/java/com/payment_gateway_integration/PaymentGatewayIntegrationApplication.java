@@ -8,5 +8,6 @@ public class PaymentGatewayIntegrationApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(PaymentGatewayIntegrationApplication.class, args);
+		System.out.println("spring boot application started");
 	}
 }

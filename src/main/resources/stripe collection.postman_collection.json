@@ -1,0 +1,738 @@
+{
+	"info": {
+		"_postman_id": "df7e6874-af2d-45d2-9b2d-8f04aa816c93",
+		"name": "stripe collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "35956540"
+	},
+	"item": [
+		{
+			"name": "customer",
+			"item": [
+				{
+					"name": "POST",
+					"item": [
+						{
+							"name": "Add customer",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Alice Johnson\",\r\n  \"email\": \"alice.johnson@example.com\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/customers",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"customers"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200-success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n  \"name\": \"Alice Johnson\",\r\n  \"email\": \"alice.johnson@example.com\"\r\n}\r\n",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/customers",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"customers"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 17 Aug 2024 06:10:34 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": \"cus_Qg1uSMaI9xDDQ2\",\n    \"name\": \"Alice Johnson\",\n    \"email\": \"alice.johnson@example.com\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "GET",
+					"item": [
+						{
+							"name": "Get All customers",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/customers",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"customers"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200-success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{host}}/customers",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"customers"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 18 Aug 2024 10:56:20 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"id\": \"cus_QewsibSbQGYaGV\",\n        \"name\": \"Alice Johnson\",\n        \"email\": \"alice.johnson@example.com\",\n        \"paymentMethods\": [\n            {\n                \"id\": \"pm_1Pnd04IHOeD2jcvaJbWsAFcg\",\n                \"type\": \"card\",\n                \"customer\": \"cus_QewsibSbQGYaGV\",\n                \"billingDetails\": \"<com.stripe.model.PaymentMethod$BillingDetails@1372780713 id=> JSON: {\\n  \\\"address\\\": {\\n    \\\"city\\\": null,\\n    \\\"country\\\": null,\\n    \\\"line1\\\": null,\\n    \\\"line2\\\": null,\\n    \\\"postal_code\\\": null,\\n    \\\"state\\\": null\\n  },\\n  \\\"email\\\": null,\\n  \\\"name\\\": null,\\n  \\\"phone\\\": null\\n}\"\n            }\n        ],\n        \"balance\": {\n            \"available\": 500,\n            \"pending\": 0\n        },\n        \"transactions\": []\n    },\n    {\n        \"id\": \"cus_Qfp3Rsl8YqlQQa\",\n        \"name\": \"Krushna Mistry\",\n        \"email\": \"Krushna.mistry@example.com\",\n        \"paymentMethods\": [],\n        \"balance\": null,\n        \"transactions\": []\n    },\n    {\n        \"id\": \"cus_Qfp4CEPhgpkt98\",\n        \"name\": \"cus_Qfp3Rsl8YqlQQa\",\n        \"email\": null,\n        \"paymentMethods\": null,\n        \"balance\": null,\n        \"transactions\": []\n    },\n    {\n        \"id\": \"cus_Qfp4Tizv3timbn\",\n        \"name\": null,\n        \"email\": null,\n        \"paymentMethods\": null,\n        \"balance\": null,\n        \"transactions\": []\n    },\n    {\n        \"id\": \"cus_Qg1uSMaI9xDDQ2\",\n        \"name\": \"Alice Johnson\",\n        \"email\": \"alice.johnson@example.com\",\n        \"paymentMethods\": null,\n        \"balance\": null,\n        \"transactions\": []\n    }\n]"
+								}
+							]
+						},
+						{
+							"name": "Get customer by Id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/customers/1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"customers",
+										"1"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "400-Bad Request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{host}}/customers/7",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"customers",
+												"7"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "plain",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain;charset=UTF-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "24"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 17 Aug 2024 06:17:22 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										}
+									],
+									"cookie": [],
+									"body": "Account holder not found"
+								},
+								{
+									"name": "200-success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{host}}/customers/1",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"customers",
+												"1"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Sun, 18 Aug 2024 10:57:30 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": \"cus_QewsibSbQGYaGV\",\n    \"name\": \"Alice Johnson\",\n    \"email\": \"alice.johnson@example.com\",\n    \"paymentMethods\": [\n        {\n            \"id\": \"pm_1Pnd04IHOeD2jcvaJbWsAFcg\",\n            \"type\": \"card\",\n            \"customer\": \"cus_QewsibSbQGYaGV\",\n            \"billingDetails\": \"<com.stripe.model.PaymentMethod$BillingDetails@15352230 id=> JSON: {\\n  \\\"address\\\": {\\n    \\\"city\\\": null,\\n    \\\"country\\\": null,\\n    \\\"line1\\\": null,\\n    \\\"line2\\\": null,\\n    \\\"postal_code\\\": null,\\n    \\\"state\\\": null\\n  },\\n  \\\"email\\\": null,\\n  \\\"name\\\": null,\\n  \\\"phone\\\": null\\n}\"\n        }\n    ],\n    \"balance\": {\n        \"available\": 500,\n        \"pending\": 0\n    },\n    \"transactions\": []\n}"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Payment",
+			"item": [
+				{
+					"name": "POST",
+					"item": [
+						{
+							"name": "add payment method",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"stripeCustomerId\": \"cus_QewsibSbQGYaGV\", // Replace with actual customer ID\r\n    \"paymentMethodId\": \"pm_1Pnd04IHOeD2jcvaJbWsAFcg\" // Replace with actual payment method ID\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/payments/attach-method",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"payments",
+										"attach-method"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200-success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"stripeCustomerId\": \"cus_QewsibSbQGYaGV\", // Replace with actual customer ID\r\n    \"paymentMethodId\": \"pm_1Pnd04IHOeD2jcvaJbWsAFcg\" // Replace with actual payment method ID\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/payments/attach-method",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"payments",
+												"attach-method"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 17 Aug 2024 06:33:58 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": \"pm_1Pnd04IHOeD2jcvaJbWsAFcg\",\n    \"type\": \"card\",\n    \"customer\": \"cus_QewsibSbQGYaGV\",\n    \"billingDetails\": \"<com.stripe.model.PaymentMethod$BillingDetails@1582244820 id=> JSON: {\\n  \\\"address\\\": {\\n    \\\"city\\\": null,\\n    \\\"country\\\": null,\\n    \\\"line1\\\": null,\\n    \\\"line2\\\": null,\\n    \\\"postal_code\\\": null,\\n    \\\"state\\\": null\\n  },\\n  \\\"email\\\": null,\\n  \\\"name\\\": null,\\n  \\\"phone\\\": null\\n}\"\n}"
+								},
+								{
+									"name": "400-Bad Request",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"stripeCustomerId\": \"cus_QeZ9QsUXQTImnh\", // Replace with actual customer ID\r\n    \"paymentMethodId\": \"pm_1Pnd04IHOeD2jcvaJbWsAFcg\" // Replace with actual payment method ID\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/payments/attach-method",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"payments",
+												"attach-method"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 17 Aug 2024 06:35:42 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"message\": \"The payment method you provided has already been attached to a customer.; request-id: req_O6vCYMuBK4BBzP\",\n    \"status\": 400\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "GET",
+					"item": [
+						{
+							"name": "get payment By Id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/payments/5",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"payments",
+										"5"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200-success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{host}}/payments/5",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"payments",
+												"5"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 17 Aug 2024 07:04:36 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": \"pi_3PndNhIHOeD2jcva0FodRB43\",\n    \"amount\": 25,\n    \"status\": \"succeeded\"\n}"
+								}
+							]
+						},
+						{
+							"name": "get all payments",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/payments",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"payments"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200-success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{host}}/payments",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"payments"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 17 Aug 2024 07:05:15 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"id\": \"pi_3PndGkIHOeD2jcva0BW5zuzQ\",\n        \"amount\": 25,\n        \"status\": \"succeeded\"\n    },\n    {\n        \"id\": \"pi_3PndH4IHOeD2jcva1LFbox7S\",\n        \"amount\": 25,\n        \"status\": \"succeeded\"\n    },\n    {\n        \"id\": \"pi_3PndHSIHOeD2jcva0vSSrFBL\",\n        \"amount\": 25,\n        \"status\": \"succeeded\"\n    },\n    {\n        \"id\": \"pi_3PndJ3IHOeD2jcva0UagjwuR\",\n        \"amount\": 25,\n        \"status\": \"succeeded\"\n    },\n    {\n        \"id\": \"pi_3PndNhIHOeD2jcva0FodRB43\",\n        \"amount\": 25,\n        \"status\": \"succeeded\"\n    },\n    {\n        \"id\": \"pi_3PndOwIHOeD2jcva0qosaMi6\",\n        \"amount\": 25,\n        \"status\": \"succeeded\"\n    },\n    {\n        \"id\": \"pi_3PogHsIHOeD2jcva18IZitCo\",\n        \"amount\": 20,\n        \"status\": \"succeeded\"\n    },\n    {\n        \"id\": \"pi_3PogMEIHOeD2jcva1sYuKI84\",\n        \"amount\": 1,\n        \"status\": \"succeeded\"\n    },\n    {\n        \"id\": \"pi_3PogT1IHOeD2jcva0vNPKcMN\",\n        \"amount\": 1,\n        \"status\": \"succeeded\"\n    },\n    {\n        \"id\": \"pi_3PogUuIHOeD2jcva1IQSp01d\",\n        \"amount\": 1,\n        \"status\": \"succeeded\"\n    },\n    {\n        \"id\": \"pi_3PogXHIHOeD2jcva12nLOEW7\",\n        \"amount\": 1,\n        \"status\": \"succeeded\"\n    },\n    {\n        \"id\": \"pi_3PogaDIHOeD2jcva1DvNOhKm\",\n        \"amount\": 1,\n        \"status\": \"succeeded\"\n    },\n    {\n        \"id\": \"pi_3Pogb8IHOeD2jcva1j4aUoAm\",\n        \"amount\": 1,\n        \"status\": \"succeeded\"\n    }\n]"
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Balance",
+			"item": [
+				{
+					"name": "POST",
+					"item": [
+						{
+							"name": "add top-up balance",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"topUpAmount\": 500,\r\n    \"paymentMethodId\": \"pm_1Pnd04IHOeD2jcvaJbWsAFcg\" \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/balance/top-up/1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"balance",
+										"top-up",
+										"1"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200-success",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"topUpAmount\": 500,\r\n    \"paymentMethodId\": \"pm_1Pnd04IHOeD2jcvaJbWsAFcg\" \r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{host}}/balance/top-up/1",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"balance",
+												"top-up",
+												"1"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 17 Aug 2024 07:32:47 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"available\": 500,\n    \"pending\": 0\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "GET",
+					"item": [
+						{
+							"name": "Get balance by Id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/balance/1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"balance",
+										"1"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "200-success",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{host}}/balance/1",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"balance",
+												"1"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										},
+										{
+											"key": "Transfer-Encoding",
+											"value": "chunked"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 17 Aug 2024 07:34:28 GMT"
+										},
+										{
+											"key": "Keep-Alive",
+											"value": "timeout=60"
+										},
+										{
+											"key": "Connection",
+											"value": "keep-alive"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"available\": 500,\n    \"pending\": 0\n}"
+								},
+								{
+									"name": "400-Bad Request",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{host}}/balance/5",
+											"host": [
+												"{{host}}"
+											],
+											"path": [
+												"balance",
+												"5"
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "plain",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain;charset=UTF-8"
+										},
+										{
+											"key": "Content-Length",
+											"value": "25"
+										},
+										{
+											"key": "Date",
+											"value": "Sat, 17 Aug 2024 07:35:10 GMT"
+										},
+										{
+											"key": "Connection",
+											"value": "close"
+										}
+									],
+									"cookie": [],
+									"body": "Account balance not found"
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}
